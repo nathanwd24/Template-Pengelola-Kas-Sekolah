@@ -17,6 +17,120 @@
   <link rel="stylesheet" crossorigin href="{{ asset('compiled/css/app-dark.css') }}" />
   <link rel="stylesheet" crossorigin href="{{ asset('compiled/css/iconly.css') }}" />
   <link rel="stylesheet" crossorigin href="{{ asset('extensions/sweetalert2/sweetalert2.min.css') }}" />
+  <style>
+    /* Sidebar branding with red accent */
+    .sidebar-header .logo a {
+      font-size: 1.3rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.5px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .sidebar-header .logo a:hover {
+      transform: scale(1.05);
+    }
+
+    /* Sidebar menu items with red hover effect */
+    .sidebar-menu .menu li.sidebar-item a.sidebar-link {
+      color: #475569;
+      font-weight: 500;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .sidebar-menu .menu li.sidebar-item a.sidebar-link:hover {
+      color: #ef4444;
+      padding-left: calc(1.5rem + 8px);
+    }
+
+    .sidebar-menu .menu li.sidebar-item.active > a.sidebar-link {
+      color: #ef4444;
+      background: linear-gradient(90deg, rgba(239, 68, 68, 0.1) 0%, transparent 100%);
+      border-left: 4px solid #ef4444;
+      padding-left: calc(1.5rem - 4px);
+    }
+
+    .sidebar-menu .menu li.sidebar-item i {
+      color: #64748b;
+      transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .sidebar-menu .menu li.sidebar-item.active i,
+    .sidebar-menu .menu li.sidebar-item:hover i {
+      color: #ef4444;
+    }
+
+    /* Submenu styling */
+    .sidebar-menu .submenu li.sidebar-item a.sidebar-link {
+      padding-left: 3rem;
+      font-size: 0.95rem;
+    }
+
+    .sidebar-menu .submenu li.sidebar-item.active > a.sidebar-link {
+      color: #ef4444;
+      background: rgba(239, 68, 68, 0.08);
+    }
+
+    /* Sidebar title */
+    .sidebar-menu .menu .sidebar-title {
+      color: #9ca3af;
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      padding-left: 1.5rem;
+    }
+
+    /* Theme toggle button */
+    .theme-toggle .form-check-input {
+      cursor: pointer;
+      border: 2px solid #e5e7eb;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .theme-toggle .form-check-input:checked {
+      background-color: #ef4444;
+      border-color: #ef4444;
+      box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+    }
+
+    /* Dark mode adjustments */
+    body.dark-mode .sidebar-header .logo a {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    body.dark-mode .sidebar-menu .menu li.sidebar-item a.sidebar-link {
+      color: #cbd5e1;
+    }
+
+    body.dark-mode .sidebar-menu .menu li.sidebar-item a.sidebar-link:hover {
+      color: #ef4444;
+    }
+
+    body.dark-mode .sidebar-menu .menu li.sidebar-item.active > a.sidebar-link {
+      color: #ef4444;
+      background: linear-gradient(90deg, rgba(239, 68, 68, 0.15) 0%, transparent 100%);
+    }
+
+    body.dark-mode .sidebar-menu .menu li.sidebar-item i {
+      color: #94a3b8;
+    }
+
+    body.dark-mode .sidebar-menu .menu li.sidebar-item.active i,
+    body.dark-mode .sidebar-menu .menu li.sidebar-item:hover i {
+      color: #ef4444;
+    }
+
+    body.dark-mode .sidebar-menu .menu .sidebar-title {
+      color: #475569;
+    }
+  </style>
   @vite('resources/js/app.js')
 </head>
 

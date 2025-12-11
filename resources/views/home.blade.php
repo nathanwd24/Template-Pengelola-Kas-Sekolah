@@ -2,151 +2,229 @@
 
     <style>
         .home-section {
-            padding: 60px 0;
+            padding: 80px 0;
+        }
+
+        .section-heading {
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            text-align: center;
+            letter-spacing: -1px;
+        }
+
+        .section-subheading {
+            font-size: 1.2rem;
+            color: #64748b;
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 500;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .intro-text {
-            font-size: 1.2rem;
-            line-height: 2;
-            color: #334155;
-            margin-bottom: 30px;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #475569;
+            margin-bottom: 40px;
             text-align: center;
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 500;
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
-            margin: 50px 0;
+            margin: 60px 0;
         }
 
         .stat-item {
             text-align: center;
-            padding: 30px;
-            border-left: 4px solid #2563eb;
-            background: rgba(37, 99, 235, 0.03);
+            padding: 40px 25px;
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.05) 0%, rgba(239, 68, 68, 0.02) 100%);
+            border-left: 5px solid #ef4444;
+            border-radius: 8px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(239, 68, 68, 0.15);
+            border-left-width: 8px;
+        }
+
+        .stat-item:hover::before {
+            opacity: 1;
         }
 
         .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #2563eb;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #ef4444;
             margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
         }
 
         .stat-label {
-            font-size: 1rem;
+            font-size: 1.05rem;
             color: #64748b;
-            font-weight: 500;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            position: relative;
+            z-index: 1;
         }
 
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
-            margin: 50px 0;
+            margin: 60px 0;
         }
 
         .feature-item {
             text-align: left;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid rgba(239, 68, 68, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-color: #ef4444;
         }
 
         .feature-icon {
-            font-size: 2.5rem;
-            color: #2563eb;
-            margin-bottom: 15px;
+            font-size: 3rem;
+            color: #ef4444;
+            margin-bottom: 20px;
+            display: inline-block;
         }
 
         .feature-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 10px;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 12px;
         }
 
         .feature-desc {
             font-size: 1rem;
-            line-height: 1.7;
+            line-height: 1.8;
             color: #64748b;
+            font-weight: 500;
         }
 
-        .section-heading {
+        .motto-section {
+            text-align: center;
+            padding: 60px 40px;
+            margin: 70px 0;
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 50%, #991b1b 100%);
+            color: white;
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(239, 68, 68, 0.3);
+        }
+
+        .motto-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            filter: blur(40px);
+        }
+
+        .motto-text {
             font-size: 2.5rem;
-            font-weight: 800;
-            color: #1e293b;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .section-subheading {
-            font-size: 1.1rem;
-            color: #64748b;
-            text-align: center;
-            margin-bottom: 40px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         .quick-links {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
-            margin-top: 50px;
+            margin-top: 60px;
         }
 
         .quick-link {
             display: flex;
             align-items: center;
-            padding: 25px;
-            border-left: 4px solid #2563eb;
-            background: rgba(37, 99, 235, 0.03);
+            padding: 30px;
+            border-left: 5px solid #ef4444;
+            background: white;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
         .quick-link:hover {
             border-left-width: 8px;
-            background: rgba(37, 99, 235, 0.08);
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.08) 0%, transparent 100%);
+            transform: translateX(12px);
+            box-shadow: 0 12px 30px rgba(239, 68, 68, 0.15);
+            color: #ef4444;
         }
 
         .quick-link-icon {
-            font-size: 2.5rem;
-            color: #2563eb;
-            margin-right: 20px;
+            font-size: 3rem;
+            color: #ef4444;
+            margin-right: 25px;
+            flex-shrink: 0;
         }
 
         .quick-link-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 5px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            display: block;
         }
 
         .quick-link-desc {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #64748b;
             margin: 0;
-        }
-
-        .motto-section {
-            text-align: center;
-            padding: 40px;
-            margin: 50px 0;
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
-            color: white;
-        }
-
-        .motto-text {
-            font-size: 2rem;
-            font-weight: 700;
-            letter-spacing: 3px;
+            font-weight: 500;
         }
 
         body.dark-mode .section-heading,
         body.dark-mode .feature-title,
         body.dark-mode .quick-link-title {
-            color: #e2e8f0;
+            color: #e5e7eb;
         }
 
         body.dark-mode .intro-text,
@@ -154,25 +232,49 @@
         body.dark-mode .feature-desc,
         body.dark-mode .stat-label,
         body.dark-mode .quick-link-desc {
-            color: #94a3b8;
+            color: #cbd5e1;
         }
 
         body.dark-mode .stat-item,
+        body.dark-mode .feature-item,
         body.dark-mode .quick-link {
-            background: rgba(96, 165, 250, 0.1);
-            border-left-color: #60a5fa;
+            background: rgba(31, 41, 55, 0.6);
+            border-color: rgba(239, 68, 68, 0.2);
         }
 
         body.dark-mode .stat-number,
         body.dark-mode .feature-icon,
         body.dark-mode .quick-link-icon {
-            color: #60a5fa;
+            color: #fca5a5;
         }
+
+        @media (max-width: 768px) {
+            .section-heading {
+                font-size: 2rem;
+            }
+
+            .section-subheading {
+                font-size: 1rem;
+            }
+
+            .feature-grid {
+                gap: 25px;
+            }
+
+            .motto-text {
+                font-size: 1.8rem;
+            }
+
+            .stats-grid {
+                gap: 20px;
+            }
+        }
+
     </style>
 
     <div class="container home-section">
         
-        <h1 class="section-heading">Selamat Datang di SMA Negeri 28 Jakarta</h1>
+        <h1 class="section-heading">Selamat Datang di SMAN 28 Jakarta</h1>
         <p class="intro-text">
             Sekolah Plus Standar Nasional yang telah berdiri sejak 1970, berkomitmen mencetak 
             generasi unggul berdasarkan IMTAK dan IPTEK dengan mengusung motto 
@@ -185,7 +287,7 @@
                 <div class="stat-label">Tahun Pengalaman</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">100+</div>
+                <div class="stat-number">150+</div>
                 <div class="stat-label">Guru Profesional</div>
             </div>
             <div class="stat-item">
@@ -193,7 +295,7 @@
                 <div class="stat-label">Akreditasi</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">1000+</div>
+                <div class="stat-number">1500+</div>
                 <div class="stat-label">Siswa Aktif</div>
             </div>
         </div>
@@ -207,7 +309,7 @@
                 <h3 class="feature-title">Guru Berpengalaman</h3>
                 <p class="feature-desc">
                     Tenaga pengajar profesional dan berdedikasi yang tidak hanya mengajarkan ilmu, 
-                    tetapi juga membentuk karakter unggul.
+                    tetapi juga membentuk karakter unggul generasi penerus bangsa.
                 </p>
             </div>
 
@@ -216,7 +318,7 @@
                 <h3 class="feature-title">Terakreditasi A</h3>
                 <p class="feature-desc">
                     Kualitas pendidikan terjamin dengan akreditasi A yang memberikan peluang 
-                    lebih luas untuk masa depan.
+                    lebih luas untuk melanjutkan pendidikan ke tingkat lebih tinggi.
                 </p>
             </div>
 
@@ -225,7 +327,7 @@
                 <h3 class="feature-title">Prestasi Gemilang</h3>
                 <p class="feature-desc">
                     Raihan prestasi akademik dan non-akademik di tingkat nasional 
-                    maupun internasional.
+                    maupun internasional sebagai bukti kualitas pendidikan.
                 </p>
             </div>
 
@@ -234,7 +336,25 @@
                 <h3 class="feature-title">Kurikulum Penggerak</h3>
                 <p class="feature-desc">
                     Menerapkan Kurikulum Sekolah Penggerak yang inovatif dan berbasis 
-                    teknologi untuk pembelajaran efektif.
+                    teknologi untuk pembelajaran yang lebih efektif dan relevan.
+                </p>
+            </div>
+
+            <div class="feature-item">
+                <i class="bi bi-cpu-fill feature-icon"></i>
+                <h3 class="feature-title">Fasilitas Modern</h3>
+                <p class="feature-desc">
+                    Sarana dan prasarana lengkap dengan teknologi terkini mendukung 
+                    proses pembelajaran yang interaktif dan menyenangkan.
+                </p>
+            </div>
+
+            <div class="feature-item">
+                <i class="bi bi-lightning-fill feature-icon"></i>
+                <h3 class="feature-title">Pengembangan Karakter</h3>
+                <p class="feature-desc">
+                    Program pembinaan karakter komprehensif mengutamakan nilai moral, 
+                    etika, dan kepribadian unggul dalam kehidupan bermasyarakat.
                 </p>
             </div>
         </div>
@@ -249,7 +369,7 @@
             <a href="/biodata" class="quick-link">
                 <i class="bi bi-info-circle-fill quick-link-icon"></i>
                 <div>
-                    <div class="quick-link-title">Biodata Sekolah</div>
+                    <span class="quick-link-title">Biodata Sekolah</span>
                     <p class="quick-link-desc">Informasi lengkap profil dan data sekolah</p>
                 </div>
             </a>
@@ -257,7 +377,7 @@
             <a href="/sejarah" class="quick-link">
                 <i class="bi bi-clock-history quick-link-icon"></i>
                 <div>
-                    <div class="quick-link-title">Sejarah & Visi Misi</div>
+                    <span class="quick-link-title">Sejarah & Visi Misi</span>
                     <p class="quick-link-desc">Perjalanan panjang SMAN 28 Jakarta</p>
                 </div>
             </a>
@@ -265,7 +385,7 @@
             <a href="/contact" class="quick-link">
                 <i class="bi bi-telephone-fill quick-link-icon"></i>
                 <div>
-                    <div class="quick-link-title">Hubungi Kami</div>
+                    <span class="quick-link-title">Hubungi Kami</span>
                     <p class="quick-link-desc">Informasi kontak dan lokasi sekolah</p>
                 </div>
             </a>
